@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "nike-2e4af": {
+      "hosting": {
+        "nike_angular": [
+          "nike-2e4af"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "nike-2e4af"
+  }
+}

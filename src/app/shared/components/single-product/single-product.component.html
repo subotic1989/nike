@@ -1,0 +1,40 @@
+<app-banner-sale></app-banner-sale>
+
+<div class="single-product section-padding">
+  <div class="single-product__img">
+    <!-- <img src="{{ product?.images[test] }}" alt="" /> -->
+    <img src="{{ product?.images[indexImg] }}" alt="nike{{ indexImg }}" />
+    <div class="images">
+      <img
+        *ngFor="let img of product?.images; let i = index"
+        src="{{ img }}"
+        alt="nike"
+        (click)="onShowImage(i)"
+      />
+    </div>
+  </div>
+
+  <form class="single-product__data" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h6>{{ product?.marke }}</h6>
+    <h4>{{ product?.title }}</h4>
+    <h3>{{ product?.price }}€</h3>
+    <div class="options">
+      <select name="size" id="size" formControlName="size">
+        <option value="" selected disabled hidden>Choose size</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+      </select>
+      <input
+        type="number"
+        min="1"
+        max="10"
+        formControlName="quantity"
+        class="error"
+      />
+    </div>
+    <app-button-primary>Add To Cart</app-button-primary>
+  </form>
+</div>

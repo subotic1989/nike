@@ -1,0 +1,38 @@
+.app-page {
+  max-width: 900px;
+  margin: 0px auto;
+
+  background: $base-light;
+  padding: 32px;
+
+  position: relative;
+
+  &__header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__content {
+    margin: 0px auto;
+  }
+
+  &__footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.section-padding {
+  padding: 40px 80px;
+}
+
+.section-banner {
+  padding: 40px 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  // .app-page {
+  //   width: 600px;
+  // }
+}

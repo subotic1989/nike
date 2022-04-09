@@ -1,0 +1,61 @@
+<app-banner-welcome
+  [title]="'#shop'"
+  [subtitle]="'Introducing Afterpay, Shop Now, Pay Later.'"
+  [backgroundImage]="'./../../../../assets/images/banners/banner66.jpg'"
+></app-banner-welcome>
+
+<ng-container *ngIf="products.length == 0">
+  <div class="empty-cart section-padding">
+    <h5>There are no items in your bag.</h5>
+    <app-button-primary [routerLink]="['/shop']">Go to Shop</app-button-primary>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="products.length !== 0">
+  <div class="cart section-padding">
+    <table id="customers">
+      <thead>
+        <tr>
+          <th>Nr.</th>
+          <th>Product Name</th>
+          <th>Size</th>
+          <th>Product Image</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let i = index">
+          <td>{{ i + 1 }}.</td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.size }}</td>
+          <td>
+            <img
+              [routerLink]="['/single-product', product.eventId]"
+              style="width: 100px; cursor: pointer"
+              src="{{ product.images[0] }}"
+              alt=""
+            />
+          </td>
+          <td>{{ product.price | number: "1.2-2" }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.total | number: "1.2-2" }}</td>
+          <td>
+            <button (click)="onRemoveItem(product.id)">
+              <img
+                class="btn-trash"
+                src="../../../assets/images/icons/recycle-bin-line.svg"
+                alt=""
+              />
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span class="total"
+      >Summary: <strong> {{ initValues() | number: "1.2-2" }} € </strong>
+    </span>
+  </div>
+</ng-container>

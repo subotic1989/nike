@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "nike_angular:build:production",
+            "firebaseProject": "nike-2e4af",
+            "firebaseHostingSite": "nike-2e4af"
+          }
         }
       }
     }

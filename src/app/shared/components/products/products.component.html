@@ -1,0 +1,38 @@
+<select name="price" id="price" #t (change)="test(t.value)">
+  <option value="0 200 price">All</option>
+  <option value="91 120 price">91-120</option>
+  <option value="0 90 price">0-90</option>
+  <option value="4 6 stars">5 stars</option>
+  <option value="3 5 stars">4 stars</option>
+  <option value="1 3 stars">2 stars</option>
+</select>
+
+<div class="products section-padding">
+  <h2 class="center">{{ chapter }}</h2>
+  <h6 class="center mar">{{ subchapter }}</h6>
+
+  <div class="products__con">
+    <div
+      class="products__box"
+      *ngFor="let product of products | products: limit"
+      [routerLink]="['/single-product', product.eventId]"
+    >
+      <img src="{{ product.images[2] }}" alt="" />
+      <h6>{{ product.marke }}</h6>
+      <h5>{{ product.title }}</h5>
+      <div class="stars">
+        <img
+          src="./../../../../assets/images/icons/star-symbol.svg"
+          alt="star"
+          *ngFor="let star of counter(product.stars)"
+        />
+      </div>
+      <div class="buy">
+        <h5 class="buy__price">{{ product.price }}€</h5>
+        <span class="circle">
+          <img src="./../../../../assets/images/icons/cart-plus.svg" alt="" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

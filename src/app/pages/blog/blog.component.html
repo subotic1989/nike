@@ -1,0 +1,20 @@
+<app-banner-welcome
+  [title]="'#nike_news'"
+  [subtitle]="'Your source for the latest NIKE, Inc. stories'"
+  [backgroundImage]="'./../../../../assets/images/banners/banner66.jpg'"
+></app-banner-welcome>
+
+<div class="blogs section-padding">
+  <div class="blog" *ngFor="let blog of blogs">
+    <div class="blog__img">
+      <img src="{{ blog.img }}" alt="{{ blog.datum }}" />
+      <div class="span">{{ blog.datum }}</div>
+    </div>
+    <div class="blog__article">
+      <h4>{{ blog.title }}</h4>
+      <p>
+        {{ blog.content }}
+      </p>
+    </div>
+  </div>
+</div>

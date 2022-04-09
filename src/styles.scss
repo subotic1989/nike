@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/main";
+
+@font-face {
+  font-family: Spartan;
+  src: url(assets/fonts/Spartan-VariableFont_wght.ttf) format("truetype");
+}
+
+html,
+body {
+  //   height: auto;
+  //   font-family: Spartan;
+  //   background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  //   background-position: center;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+}
