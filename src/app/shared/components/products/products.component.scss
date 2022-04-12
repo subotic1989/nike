@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 412px) {
+@media only screen and (max-device-width: 360px) {
   .section-padding {
     padding: 40px 20px;
   }
@@ -109,9 +109,7 @@
   .products__con {
     justify-content: center;
   }
-}
 
-@media (max-width: 360px) {
   h2 {
     font-size: 30px;
   }

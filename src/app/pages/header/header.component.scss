@@ -160,7 +160,7 @@
 
 // media phone
 
-@media (max-width: 412px) {
+@media only screen and (max-device-width: 360px) {
   .header__logo img {
     width: 60px;
   }

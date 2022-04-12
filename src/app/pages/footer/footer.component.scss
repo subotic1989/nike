@@ -90,7 +90,7 @@
   }
 }
 
-@media (max-width: 412px) {
+@media only screen and (max-device-width: 360px) {
   .section-padding {
     padding: 40px 20px;
   }
@@ -103,9 +103,7 @@
   .copyright {
     margin-top: 10px !important;
   }
-}
 
-@media (max-width: 360px) {
   .footer {
     display: flex;
     flex-direction: column;

@@ -19,7 +19,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media only screen and (max-device-width: 360px) {
   h2 {
     font-size: 35px;
   }
