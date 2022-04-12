@@ -10,6 +10,7 @@ export class ProductsPipe implements PipeTransform {
     if (value?.length === 0) {
       return;
     }
+
     const results: any = [];
 
     value?.forEach((el: any) => {

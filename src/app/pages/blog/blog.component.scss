@@ -83,4 +83,16 @@
     margin-top: 20px;
     padding: 0 10px;
   }
+  .blogs .blog {
+    margin: 0px;
+    flex-direction: column;
+    margin-bottom: 70px;
+
+    &:first-child {
+      margin-top: 40px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }

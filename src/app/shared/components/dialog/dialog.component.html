@@ -1,0 +1,13 @@
+<div
+  id="overlay"
+  (click)="cancel($event)"
+  [ngStyle]="{ display: !isDialog ? 'flex' : 'none' }"
+>
+  <div class="dialog">
+    <h6 class="question">Are you sure you want to delete?</h6>
+    <div class="div">
+      <button class="delete" (click)="confirm($event)">Delete</button>
+      <button class="cancel" (click)="cancel($event)">Cancel</button>
+    </div>
+  </div>
+</div>

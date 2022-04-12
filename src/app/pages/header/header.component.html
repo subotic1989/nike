@@ -3,7 +3,7 @@
     <img src="./../../../assets/images/header/logo.svg" alt="logo" />
   </a>
 
-  <div class="header__nav" (click)="test($event)">
+  <div class="header__nav">
     <ul class="mobile" [ngClass]="{ mobileMode: isClosed }">
       <!-- show icon in mobile mode  -->
       <div class="close-btn" (click)="onClose()">
@@ -14,27 +14,27 @@
         />
       </div>
       <!-- show icon in mobile mode -->
-      <li>
+      <li (click)="onClose()">
         <a [routerLink]="['/home']" routerLinkActive="router-link-active"
           >Home</a
         >
       </li>
-      <li>
+      <li (click)="onClose()">
         <a [routerLink]="['/shop']" routerLinkActive="router-link-active"
           >Shop</a
         >
       </li>
-      <li>
+      <li (click)="onClose()">
         <a [routerLink]="['/blog']" routerLinkActive="router-link-active"
           >Blog</a
         >
       </li>
-      <li>
+      <li (click)="onClose()">
         <a [routerLink]="['/about']" routerLinkActive="router-link-active"
           >About</a
         >
       </li>
-      <li>
+      <li (click)="onClose()">
         <a [routerLink]="['/contact']" routerLinkActive="router-link-active"
           >Contact</a
         >

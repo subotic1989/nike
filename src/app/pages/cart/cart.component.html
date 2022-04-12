@@ -1,9 +1,18 @@
+<!-- dialog delete -->
+<app-dialog
+  [isDialog]="isDialog"
+  (deleteItemEvent)="deleteItemEvent($event)"
+  (cancelEvent)="cancelEvent($event)"
+></app-dialog>
+
+<!-- banner #shop -->
 <app-banner-welcome
   [title]="'#shop'"
   [subtitle]="'Introducing Afterpay, Shop Now, Pay Later.'"
   [backgroundImage]="'./../../../../assets/images/banners/banner66.jpg'"
 ></app-banner-welcome>
 
+<!-- empty cart -->
 <ng-container *ngIf="products.length == 0">
   <div class="empty-cart section-padding">
     <h5>There are no items in your bag.</h5>
@@ -11,8 +20,9 @@
   </div>
 </ng-container>
 
+<!-- desktop mode -->
 <ng-container *ngIf="products.length !== 0">
-  <div class="cart section-padding">
+  <div class="cart section-padding desktop-mode">
     <table id="customers">
       <thead>
         <tr>
@@ -55,7 +65,38 @@
       </tbody>
     </table>
     <span class="total"
-      >Summary: <strong> {{ initValues() | number: "1.2-2" }} € </strong>
+      >Summary:
+      <strong> {{ test | number: "1.2-2" }} € </strong>
+    </span>
+  </div>
+</ng-container>
+
+<!-- mobile mode -->
+<ng-container *ngIf="products.length !== 0">
+  <div class="mobile-container section-padding mobile-mode">
+    <div class="mobile-box" *ngFor="let product of products; let i = index">
+      <span class="no">{{ i + 1 }}.</span>
+      <div class="mobile-box__img">
+        <img src="{{ product.images }}" alt="{{ product.id }}" />
+      </div>
+      <div class="mobile-box__details">
+        <span><strong>Product: </strong>{{ product.title }}</span>
+        <span><strong>Quantity: </strong>{{ product.quantity }}</span>
+        <span><strong>Size: </strong>{{ product.size }}</span>
+        <span><strong>Price: </strong>{{ product.price }} € </span>
+        <button (click)="onRemoveItem(product.id)">
+          <img
+            class="btn-trash"
+            src="../../../assets/images/icons/recycle-bin-line.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
+
+    <span class="total"
+      >Summary:
+      <strong> {{ test | number: "1.2-2" }} € </strong>
     </span>
   </div>
 </ng-container>

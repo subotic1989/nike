@@ -7,6 +7,6 @@ import { ProductsPipe } from './products.pipe';
 @NgModule({
   declarations: [ProductsComponent, ProductsPipe],
   imports: [CommonModule, RouterModule],
-  exports: [ProductsComponent],
+  exports: [ProductsComponent, ProductsPipe],
 })
 export class ProductsModule {}

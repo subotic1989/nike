@@ -7,6 +7,7 @@ import { BannerWelcomeModule } from '@app/shared/components/banner-welcome/banne
 import { ButtonPrimaryModule } from '@app/shared/library/buttons/button-primary/button-primary.module';
 import { CartService } from '../service/cart.service';
 import { RouterModule } from '@angular/router';
+import { DialogModule } from '@app/shared/components/dialog/dialog.module';
 
 @NgModule({
   declarations: [CartComponent],
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     BannerWelcomeModule,
     ButtonPrimaryModule,
     RouterModule,
+    DialogModule,
   ],
 })
 export class CartModule {}

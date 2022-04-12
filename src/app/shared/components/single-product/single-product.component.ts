@@ -66,6 +66,7 @@ export class SingleProductComponent implements OnInit {
       ],
     });
   }
+
   onSubmit() {
     if (this.form.valid) {
       let id = new Date().getTime();

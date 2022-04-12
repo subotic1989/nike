@@ -7,6 +7,6 @@ export interface ProductInterface {
   eventId?: string;
   id?: any;
   quantity?: number | any;
-  total?: number;
+  total: number;
   size: number;
 }

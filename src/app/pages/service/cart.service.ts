@@ -10,46 +10,35 @@ export class CartService {
   public cartItemList: ProductInterface[] = [];
   public productList = new BehaviorSubject<any>([]);
 
-  constructor(private lsService: LocalStorageService) {
-    let cartFromLocalStorage = this.lsService.get('cart');
+  constructor(private localStorageService: LocalStorageService) {
+    let cartFromLocalStorage = this.localStorageService.get('cart');
     if (cartFromLocalStorage != null) {
       this.cartItemList = cartFromLocalStorage;
       this.productList.next(cartFromLocalStorage);
     }
   }
 
-  getProducts() {
-    return this.productList.asObservable();
-  }
-
   addToCart(product: ProductInterface) {
-    let duplicate = this.cartItemList.find(
+    const existing = this.cartItemList.find(
       (el) => el.eventId == product.eventId && el.size == product.size
     );
 
-    if (duplicate) {
-      let test = this.cartItemList.findIndex(
-        (el) => el.eventId == product.eventId
-      );
-      this.cartItemList[test].quantity += product.quantity;
-      this.cartItemList[test].total =
-        this.cartItemList[test].quantity * product.price;
+    if (existing) {
+      // let test = this.cartItemList.findIndex(
+      //   (el) => el.eventId == product.eventId
+      // );
+      // this.cartItemList[test].quantity += product.quantity;
+      // this.cartItemList[test].total =
+      //   this.cartItemList[test].quantity * product.price;
+      existing.quantity += product.quantity;
+      existing.total += product.quantity * product.price;
     } else {
       this.cartItemList.push(product);
     }
 
     this.productList.next(this.cartItemList.slice());
-    this.getTotalPrice();
     this.getQuantity();
-    this.lsService.set('cart', this.cartItemList);
-  }
-
-  getTotalPrice(): number {
-    let sum = 0;
-    this.cartItemList.map((item: ProductInterface) => {
-      sum += item.price;
-    });
-    return sum;
+    this.localStorageService.set('cart', this.cartItemList);
   }
 
   getQuantity(): number {
@@ -67,7 +56,7 @@ export class CartService {
       }
     });
     this.productList.next(this.cartItemList.slice());
-    this.lsService.set('cart', this.cartItemList);
+    this.localStorageService.set('cart', this.cartItemList);
   }
 
   removeAllCart() {
