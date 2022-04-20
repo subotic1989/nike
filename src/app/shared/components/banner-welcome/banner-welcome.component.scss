@@ -1,7 +1,6 @@
 @import "./../../../../styles.scss";
 
 .banner {
-  // background-image: url("./../../../../assets/images/banners/banner66.jpg");
   background-position: center;
   background-size: cover;
   height: 30vh;
@@ -13,12 +12,14 @@
   justify-content: center;
 }
 
+// media query 820px
 @media (max-width: 820px) {
   .banner {
     height: 20vh !important;
   }
 }
 
+// media query 412px
 @media only screen and (max-device-width: 412px) {
   h2 {
     font-size: 35px;

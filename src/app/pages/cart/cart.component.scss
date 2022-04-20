@@ -5,43 +5,59 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-}
 
-#customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-#customers td {
-  border-bottom: 1px solid #ddd;
-  padding: 8px;
-}
-#customers td:nth-child(1) {
-  border-left: 1px solid #ddd;
-}
-#customers td:nth-last-child(1) {
-  border-right: 1px solid #ddd;
-}
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
 
-#customers tr {
-  background-color: #f6f6f6;
-  text-align: center;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
-}
+  td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
 
-#customers tr:hover {
-  box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
-}
+    &:nth-child(1) {
+      border-left: 1px solid #ddd;
+    }
 
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: $primary;
-  color: white;
+    &:nth-last-child(1) {
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  tr {
+    background-color: #f6f6f6;
+    text-align: center;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+
+    &:hover {
+      box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
+    }
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: $primary;
+    color: white;
+  }
 }
 
 .section-padding {
   padding: 40px 20px;
+}
+
+.empty-cart {
+  padding: 40px 20px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h5 {
+    margin-bottom: 20px;
+  }
 }
 
 .cart {
@@ -60,23 +76,6 @@
     transition: 0.3s;
     transform: rotate(10deg);
   }
-}
-
-.empty-cart {
-  padding: 40px 20px;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  h5 {
-    margin-bottom: 20px;
-  }
-}
-
-.mobile-mode {
-  display: none !important;
 }
 
 .total {
@@ -137,6 +136,11 @@
   }
 }
 
+.mobile-mode {
+  display: none !important;
+}
+
+// media query 412px
 @media only screen and (max-device-width: 412px) {
   .section-padding {
     overflow-x: scroll;

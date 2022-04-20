@@ -1,7 +1,9 @@
-import { OnDestroy } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Subscription } from 'rxjs';
+
+import { Subject, takeUntil } from 'rxjs';
+
+import { BlogInterface } from '../types/blog.interface';
 
 @Component({
   selector: 'app-blog',
@@ -9,23 +11,25 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+  blogs: BlogInterface[] = [];
+  onDestroy$ = new Subject();
 
   constructor(private afs: AngularFirestore) {}
 
-  blogs: any[] = [];
-
   ngOnInit(): void {
-    this.subscription = this.afs
+    this.initValues();
+  }
+
+  initValues() {
+    this.afs
       .collection('blog')
       .valueChanges()
-      .subscribe((blogs: any) => {
-        console.log(blogs);
-        this.blogs = blogs;
-      });
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((blogs: any[]) => (this.blogs = blogs));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.onDestroy$.next(null);
+    this.onDestroy$.complete();
   }
 }

@@ -1,7 +1,5 @@
-import { OnDestroy } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { CartService } from '../service/cart.service';
 
 @Component({
@@ -10,8 +8,9 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  isClosed: boolean = false;
+  public isClosed: boolean = false;
   public totalItem: number = 0;
+
   onDestroy$ = new Subject();
 
   constructor(private cartService: CartService) {}
@@ -23,9 +22,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   initValues() {
     this.cartService.productList
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe(() => {
-        this.totalItem = this.cartService.getQuantity();
-      });
+      .subscribe(() => (this.totalItem = this.cartService.getQuantity()));
   }
 
   onClose() {

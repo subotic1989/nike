@@ -1,9 +1,11 @@
+<!-- banner contact -->
 <app-banner-welcome
   [title]="'#nike_contact'"
   [subtitle]="'Your source for the latest NIKE '"
   [backgroundImage]="'./../../../../assets/images/banners/banner66.jpg'"
 ></app-banner-welcome>
 
+<!-- contact/map -->
 <section class="contact section-padding">
   <div class="contact__data">
     <h6>GET IN TOUCH</h6>
@@ -53,20 +55,15 @@
   </div>
 </section>
 
+<!-- form/people -->
 <section class="form section-padding">
   <div class="form__msg">
     <h6>LEAVE A MESSAGE</h6>
     <h4>We love to hear from you</h4>
-    <input type="text" placeholder="Your Name" name="" id="" />
-    <input type="text" placeholder="E-mail" name="" id="" />
-    <input type="text" placeholder="Subject" name="" id="" />
-    <textarea
-      name=""
-      placeholder="Your message"
-      id=""
-      cols="30"
-      rows="10"
-    ></textarea>
+    <input type="text" placeholder="Your Name" />
+    <input type="text" placeholder="E-mail" />
+    <input type="text" placeholder="Subject" />
+    <textarea placeholder="Your message" cols="30" rows="10"></textarea>
     <app-button-primary>Submit</app-button-primary>
   </div>
 

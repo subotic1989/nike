@@ -53,6 +53,7 @@ button {
   cursor: pointer;
   margin: 20px 10px 0px 10px;
 }
+
 .delete {
   background-color: $error;
   border: 1px solid $error;
@@ -64,6 +65,7 @@ button {
     transition: 0.2s;
   }
 }
+
 .cancel {
   background-color: $primary;
   border: 1px solid $primary;
@@ -76,6 +78,7 @@ button {
   }
 }
 
+// media query 412px
 @media only screen and (max-device-width: 412px) {
   .dialog {
     min-width: 340px;

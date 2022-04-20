@@ -11,17 +11,17 @@ export class ProductsComponent implements OnInit {
   @Input() subchapter: string;
   @Input() products: ProductInterface[];
 
-  limit = '0 300 price';
-  stars = 'price';
+  public limit: string = '0 300 price';
 
   constructor() {}
 
   ngOnInit(): void {}
 
+  selectedValue(limitVAlue: string) {
+    this.limit = limitVAlue;
+  }
+
   counter(i: number) {
     return new Array(i);
-  }
-  test(e: any) {
-    this.limit = e;
   }
 }

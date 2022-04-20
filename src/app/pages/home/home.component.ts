@@ -1,7 +1,6 @@
-import { OnDestroy } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Subscription } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { ProductInterface } from '../types/product.interface';
 
 @Component({
@@ -10,22 +9,25 @@ import { ProductInterface } from '../types/product.interface';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+  onDestroy$ = new Subject();
+  products: ProductInterface[] = [];
 
   constructor(private afs: AngularFirestore) {}
 
-  products: ProductInterface[];
-
   ngOnInit(): void {
-    this.subscription = this.afs
+    this.initValues();
+  }
+
+  initValues() {
+    this.afs
       .collection('new-collection')
       .valueChanges({ idField: 'eventId' })
-      .subscribe((products: any[]) => {
-        this.products = products;
-      });
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((products: any[]) => (this.products = products));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.onDestroy$.next(null);
+    this.onDestroy$.complete();
   }
 }

@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 import { CartService } from '../service/cart.service';
 import { ProductInterface } from '../types/product.interface';
 
@@ -11,9 +10,11 @@ import { ProductInterface } from '../types/product.interface';
 })
 export class CartComponent implements OnInit, OnDestroy {
   public products: ProductInterface[] = [];
-  onDestroy$ = new Subject();
+
   isDialog: boolean = true;
-  currentItem: string;
+  currentItemId: string;
+
+  onDestroy$ = new Subject();
 
   constructor(private cartService: CartService) {}
 
@@ -24,35 +25,30 @@ export class CartComponent implements OnInit, OnDestroy {
   initValues(): void {
     this.cartService.productList
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((res) => {
-        this.products = res;
-      });
+      .subscribe((products) => (this.products = products));
   }
 
-  get test() {
+  get totalSummary() {
     let total = 0;
-
     this.cartService.productList
       .pipe(takeUntil(this.onDestroy$))
-      .subscribe((res) =>
-        res.forEach((el: ProductInterface) => {
-          total += el.total;
-        })
+      .subscribe((item) =>
+        item.forEach((el: ProductInterface) => (total += el.total))
       );
     return total;
   }
 
-  onRemoveItem(id: string) {
-    this.currentItem = id;
+  onDelete(itemId: string) {
+    this.currentItemId = itemId;
     this.isDialog = false;
   }
 
-  deleteItemEvent(event: Event) {
-    this.cartService.removeCartItem(this.currentItem);
+  confirmDelete() {
+    this.cartService.removeCartItem(this.currentItemId);
     this.isDialog = true;
   }
 
-  cancelEvent(event: Event) {
+  cancelDelete() {
     this.isDialog = true;
   }
 

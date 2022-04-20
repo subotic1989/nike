@@ -1,8 +1,9 @@
 <!-- dialog delete -->
 <app-dialog
   [isDialog]="isDialog"
-  (deleteItemEvent)="deleteItemEvent($event)"
-  (cancelEvent)="cancelEvent($event)"
+  [dialogPurpose]="'action'"
+  (deleteItemEvent)="confirmDelete()"
+  (cancelEvent)="cancelDelete()"
 ></app-dialog>
 
 <!-- banner #shop -->
@@ -53,7 +54,7 @@
           <td>{{ product.quantity }}</td>
           <td>{{ product.total | number: "1.2-2" }}</td>
           <td>
-            <button (click)="onRemoveItem(product.id)">
+            <button (click)="onDelete(product.id)">
               <img
                 class="btn-trash"
                 src="../../../assets/images/icons/recycle-bin-line.svg"
@@ -66,7 +67,7 @@
     </table>
     <span class="total"
       >Summary:
-      <strong> {{ test | number: "1.2-2" }} € </strong>
+      <strong> {{ totalSummary | number: "1.2-2" }} € </strong>
     </span>
   </div>
 </ng-container>
@@ -77,14 +78,18 @@
     <div class="mobile-box" *ngFor="let product of products; let i = index">
       <span class="no">{{ i + 1 }}.</span>
       <div class="mobile-box__img">
-        <img src="{{ product.images }}" alt="{{ product.id }}" />
+        <img
+          src="{{ product.images }}"
+          alt="{{ product.id }}"
+          [routerLink]="['/single-product', product.eventId]"
+        />
       </div>
       <div class="mobile-box__details">
         <span><strong>Product: </strong>{{ product.title }}</span>
         <span><strong>Quantity: </strong>{{ product.quantity }}</span>
         <span><strong>Size: </strong>{{ product.size }}</span>
         <span><strong>Price: </strong>{{ product.price }} € </span>
-        <button (click)="onRemoveItem(product.id)">
+        <button (click)="onDelete(product.id)">
           <img
             class="btn-trash"
             src="../../../assets/images/icons/recycle-bin-line.svg"
@@ -96,7 +101,7 @@
 
     <span class="total"
       >Summary:
-      <strong> {{ test | number: "1.2-2" }} € </strong>
+      <strong> {{ totalSummary | number: "1.2-2" }} € </strong>
     </span>
   </div>
 </ng-container>

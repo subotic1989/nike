@@ -6,6 +6,7 @@ import { SingleProductComponent } from './single-product.component';
 import { ButtonPrimaryModule } from '@app/shared/library/buttons/button-primary/button-primary.module';
 import { BannerSaleModule } from '../banner-sale/banner-sale.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from '../dialog/dialog.module';
 
 @NgModule({
   declarations: [SingleProductComponent],
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonPrimaryModule,
     BannerSaleModule,
     ReactiveFormsModule,
+    DialogModule,
   ],
 })
 export class SingleProductModule {}

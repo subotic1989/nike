@@ -17,8 +17,10 @@
   }
 }
 
-@media only screen and (max-device-width: 412px) {
+@media only screen and (max-device-width: 360px) {
   .app-button-primary {
     padding: 10px 40px;
+    margin-bottom: 30px;
+    width: 100%;
   }
 }

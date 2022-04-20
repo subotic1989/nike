@@ -11,7 +11,6 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {}
 
   toHero() {
-    console.log(document.getElementById('test'));
     document.getElementById('test')?.scrollIntoView({ behavior: 'smooth' });
   }
 }

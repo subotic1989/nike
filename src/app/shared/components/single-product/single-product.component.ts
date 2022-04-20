@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Params } from '@angular/router';
 import { CartService } from '@app/pages/service/cart.service';
 import { ProductInterface } from '@app/pages/types/product.interface';
-import { markFormGroupTouched } from '@app/shared/utils/form.service';
+import { MarkFormGroupTouched } from '@app/shared/utils/form.service';
 
 @Component({
   selector: 'app-single-product',
@@ -13,6 +13,7 @@ import { markFormGroupTouched } from '@app/shared/utils/form.service';
 })
 export class SingleProductComponent implements OnInit {
   product: ProductInterface;
+  isDialog: boolean = true;
   indexImg: number = 0;
   form: FormGroup;
 
@@ -42,10 +43,6 @@ export class SingleProductComponent implements OnInit {
 
   onShowImage(indexImg: number) {
     this.indexImg = indexImg;
-  }
-
-  onAddToCart(product: ProductInterface) {
-    console.log(product);
   }
 
   initForm() {
@@ -79,8 +76,10 @@ export class SingleProductComponent implements OnInit {
         total: this.product.price * +quantity,
       };
       this.cartService.addToCart(order);
+      this.isDialog = false;
+      setTimeout(() => (this.isDialog = true), 1500);
     } else {
-      markFormGroupTouched(this.form);
+      MarkFormGroupTouched(this.form);
     }
   }
 }
