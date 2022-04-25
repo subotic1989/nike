@@ -7,7 +7,7 @@
   height: 20vh;
   background-color: $on-secondary;
   margin: 20px 0;
-  padding: 0 40px;
+  padding: 0 80px;
 
   &__left {
     h4,
@@ -73,6 +73,7 @@
 @media only screen and (max-device-width: 412px) {
   .newsletter {
     flex-direction: column;
+    justify-content: center;
   }
   h4 {
     font-size: 20px;
@@ -81,8 +82,9 @@
     font-size: 10px;
     margin-bottom: 6px;
   }
-  .newsletter__right input {
+  .newsletter__right {
     width: 100%;
+    margin-top: 20px !important;
   }
 }
 
@@ -98,5 +100,9 @@
     margin-bottom: 20px;
     line-height: 2;
     font-size: 11px;
+  }
+  .newsletter__left h6 {
+    margin-bottom: 10px;
+    font-size: 8px;
   }
 }

@@ -34,7 +34,6 @@
   h6 {
     margin-top: 5px;
     margin-bottom: 40px;
-    padding-left: 10px;
   }
 }
 
@@ -56,18 +55,32 @@
 
 @media only screen and (max-device-width: 412px) {
   .section-padding {
-    padding: 40px 20px;
+    padding: 40px 0px;
   }
-  .hero h4 {
-    font-size: 20px;
-  }
+
   .hero h1 {
     font-size: 32px;
   }
   h6 {
     font-size: 13px;
   }
+  h4 {
+    font-size: 14px !important;
+  }
   .hero {
     height: 50vh;
+  }
+  .btn {
+    display: none;
+  }
+}
+// media query 360px
+
+@media only screen and (max-device-width: 360px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero h4 {
+    font-size: 15px !important;
   }
 }

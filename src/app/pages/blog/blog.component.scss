@@ -53,6 +53,7 @@
 
       p {
         color: $text-light;
+        font-size: 20px !important;
       }
     }
   }
@@ -83,8 +84,8 @@
   }
 
   .blogs .blog {
-    margin: 0px;
-    margin-top: 70px;
+    margin-bottom: 40px !important;
+    margin-top: 70px !important;
   }
   .blogs .blog__img .span {
     font-size: 50px;
@@ -106,5 +107,19 @@
     &:last-child {
       margin-bottom: 0px;
     }
+  }
+  p {
+    font-size: 16px !important;
+  }
+}
+
+// media query 360px
+
+@media only screen and (max-device-width: 360px) {
+  .section-padding {
+    padding: 40px 0px;
+  }
+  h4 {
+    font-size: 18px;
   }
 }

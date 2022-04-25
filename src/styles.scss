@@ -11,3 +11,9 @@
   max-width: 1800px;
   margin: auto;
 }
+
+@media only screen and (max-device-width: 412px) {
+  .section-padding {
+    padding: 40px 0px !important;
+  }
+}
