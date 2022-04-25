@@ -1,19 +1,19 @@
-<select
-  name="price"
-  id="price"
-  class="filter"
-  #value
-  (change)="selectedValue(value.value)"
->
-  <option value="0 200 price">All</option>
-  <option value="91 120 price">91-120 €</option>
-  <option value="0 90 price">0-90 €</option>
-  <option value="4 6 stars">5 stars</option>
-</select>
-
 <section class="products section-padding">
   <h2 class="center">{{ chapter }}</h2>
   <h6 class="center mar">{{ subchapter }}</h6>
+
+  <select
+    name="price"
+    id="price"
+    class="filter"
+    #value
+    (change)="selectedValue(value.value)"
+  >
+    <option value="0 200 price">All</option>
+    <option value="91 120 price">91-120 €</option>
+    <option value="0 90 price">0-90 €</option>
+    <option value="4 6 stars">5 stars</option>
+  </select>
 
   <div class="products__con">
     <div

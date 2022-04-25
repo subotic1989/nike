@@ -6,8 +6,16 @@
 
   .blog {
     display: flex;
-    margin-top: 160px;
+    margin-bottom: 400px !important;
     justify-content: space-around;
+
+    &:first-child {
+      margin-top: 140px;
+    }
+
+    &:last-child {
+      margin-bottom: 140px !important;
+    }
 
     &__img {
       min-width: 300px;

@@ -9,8 +9,4 @@ export class FooterComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  toHero() {
-    document.getElementById('test')?.scrollIntoView({ behavior: 'smooth' });
-  }
 }
