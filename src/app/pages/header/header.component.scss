@@ -173,3 +173,20 @@
     align-items: baseline;
   }
 }
+@media only screen and (max-width: 412px) {
+  .header__logo img {
+    width: 60px;
+  }
+  .open-con img {
+    width: 24px !important;
+  }
+  .header__nav ul li a {
+    font-size: 24px;
+  }
+  .open-con img:last-child {
+    margin-right: 0px !important;
+  }
+  .open-con {
+    align-items: baseline;
+  }
+}

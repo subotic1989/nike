@@ -99,3 +99,29 @@
     font-size: 18px !important;
   }
 }
+
+@media only screen and (max-width: 412px) {
+  .section-padding {
+    padding: 40px 0px;
+  }
+  .about__img {
+    width: 80%;
+    min-width: unset;
+  }
+  h3 {
+    font-size: 26px;
+    text-align: center;
+  }
+  .about__article marquee {
+    font-size: 12px;
+  }
+  .app h3 {
+    margin-bottom: 40px;
+  }
+  .app__img {
+    width: 100%;
+  }
+  p {
+    font-size: 18px !important;
+  }
+}

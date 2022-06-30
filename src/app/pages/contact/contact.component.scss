@@ -167,3 +167,39 @@
     border: none;
   }
 }
+
+// media query 412px
+
+@media only screen and (max-width: 412px) {
+  .section-padding {
+    padding: 20px 20px;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact__data {
+    width: 100%;
+  }
+  .form {
+    flex-direction: column;
+  }
+  .form__people {
+    padding: 30px 10px;
+  }
+  .form__msg {
+    margin-bottom: 30px;
+  }
+  .contact__map {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .form__people {
+    padding: 0px 10px;
+  }
+  .form {
+    border: none;
+  }
+}

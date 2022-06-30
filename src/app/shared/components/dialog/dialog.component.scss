@@ -87,4 +87,19 @@ button {
     padding: 10px;
     font-size: 14px;
   }
+  h5 {
+    font-size: 15px !important;
+  }
+}
+@media only screen and (max-width: 412px) {
+  .dialog {
+    min-width: 340px;
+  }
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+  h5 {
+    font-size: 15px !important;
+  }
 }

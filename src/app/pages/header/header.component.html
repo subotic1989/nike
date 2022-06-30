@@ -40,6 +40,11 @@
           >Contact
         </a>
       </li>
+      <li (click)="onClose()">
+        <a [routerLink]="['/welcome']" routerLinkActive="router-link-active"
+          >Welcome
+        </a>
+      </li>
 
       <!-- hide icons in mobile mode  -->
       <li class="hide-icons">

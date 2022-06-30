@@ -84,3 +84,35 @@
     font-size: 15px !important;
   }
 }
+
+@media only screen and (max-width: 412px) {
+  .section-padding {
+    padding: 40px 0px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+  h6 {
+    font-size: 13px;
+  }
+  h4 {
+    font-size: 14px !important;
+  }
+  .hero {
+    height: 50vh;
+  }
+  .btn {
+    display: none;
+  }
+}
+// media query 360px
+
+@media only screen and (max-width: 360px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero h4 {
+    font-size: 15px !important;
+  }
+}

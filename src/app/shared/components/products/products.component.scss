@@ -123,3 +123,28 @@
     font-size: 10px;
   }
 }
+
+// media query 412px
+@media only screen and (max-width: 412px) {
+  .section-padding {
+    padding: 40px 20px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  .products__box {
+    width: 90%;
+  }
+  .products__con {
+    justify-content: center;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  .products .mar {
+    margin-bottom: 40px;
+  }
+  .products .mar {
+    font-size: 10px;
+  }
+}

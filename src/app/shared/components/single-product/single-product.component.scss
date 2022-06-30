@@ -124,3 +124,35 @@ select.ng-valid.ng-touched {
     font-size: 30px;
   }
 }
+
+// media query 412px
+@media only screen and (max-width: 412px) {
+  .single-product {
+    flex-direction: column;
+  }
+  .section-padding {
+    padding: 40px 20px;
+  }
+  .single-product__img {
+    width: 100%;
+    padding: 0;
+  }
+  .single-product__data h3 {
+    margin-bottom: 10px;
+  }
+  .single-product__img img {
+    width: 100%;
+  }
+  .single-product__img .images {
+    width: 100%;
+  }
+  .single-product__data h6 {
+    margin: 10px 0 15px 0;
+  }
+  h4 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+}

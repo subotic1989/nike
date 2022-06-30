@@ -112,3 +112,27 @@
     width: 100%;
   }
 }
+
+// media query 412px
+
+@media only screen and (max-width: 412px) {
+  .section-padding {
+    padding: 40px 20px;
+  }
+  .footer__col .app-con img {
+    width: 50%;
+  }
+  .footer__col .payments {
+    width: 180px;
+  }
+  .copyright {
+    margin-top: 10px !important;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__col {
+    width: 100%;
+  }
+}
