@@ -6,7 +6,7 @@
   (cancelEvent)="cancelDelete()"
 ></app-dialog>
 
-<!-- banner #shop -->
+<!-- banner  -->
 <app-banner-welcome
   [title]="'#shop'"
   [subtitle]="'Introducing Afterpay, Shop Now, Pay Later.'"
@@ -75,8 +75,9 @@
 <!-- mobile mode -->
 <ng-container *ngIf="products.length !== 0">
   <div class="mobile-container section-padding mobile-mode">
-    <div class="mobile-box" *ngFor="let product of products; let i = index">
-      <span class="no">{{ i + 1 }}.</span>
+    <!-- BOX -->
+    <div class="mobile-box" *ngFor="let product of products">
+      <!-- one -->
       <div class="mobile-box__img">
         <img
           src="{{ product.images }}"
@@ -84,6 +85,8 @@
           [routerLink]="['/single-product', product.eventId]"
         />
       </div>
+
+      <!-- two -->
       <div class="mobile-box__details">
         <span><strong>Product: </strong>{{ product.title }}</span>
         <span><strong>Quantity: </strong>{{ product.quantity }}</span>

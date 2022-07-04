@@ -6,13 +6,15 @@
 ></app-banner-welcome>
 
 <!-- blogs -->
-<section class="blogs section-padding">
-  <div class="blog" *ngFor="let blog of blogs">
-    <div class="blog__img">
+<section class="blogs">
+  <div class="container" *ngFor="let blog of blogs">
+    <!-- one -->
+    <div class="one">
       <img src="{{ blog.img }}" alt="{{ blog.datum }}" />
-      <div class="span">{{ blog.datum }}</div>
+      <div class="datum">{{ blog.datum }}</div>
     </div>
-    <div class="blog__article">
+    <!-- two -->
+    <div class="two">
       <h4>{{ blog.title }}</h4>
       <p>{{ blog.content }}</p>
     </div>

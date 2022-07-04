@@ -1,99 +1,115 @@
-<!-- banner contact -->
+<!-- banner   -->
 <app-banner-welcome
   [title]="'#nike_contact'"
   [subtitle]="'Your source for the latest NIKE '"
   [backgroundImage]="'./../../../../assets/images/banners/banner66.jpg'"
 ></app-banner-welcome>
 
-<!-- contact/map -->
-<section class="contact section-padding">
-  <div class="contact__data">
-    <h6>GET IN TOUCH</h6>
-    <h4>Visit one of our store locations or contact us today</h4>
-    <div class="row">
-      <img
-        src="../../../assets/images/contact/phone-call.svg"
-        style="width: 24px"
-        alt="phone"
-      />
-      <p>+01 2222 355 / (+43) 2345 324</p>
+<div class="contact">
+  <!-- first row -->
+  <section class="first">
+    <!-- one -->
+    <div class="one">
+      <h6>GET IN TOUCH</h6>
+      <h4>Visit one of our store locations</h4>
+      <div class="row">
+        <img
+          src="../../../assets/images/contact/phone-call.svg"
+          style="width: 24px"
+          alt="phone"
+        />
+        <p>+01 2222 355 / (+43) 2345 324</p>
+      </div>
+      <div class="row">
+        <img
+          src="../../../assets/images/contact/maps.svg"
+          style="width: 24px"
+          alt="phone"
+        />
+        <p>Wellington Road 54</p>
+      </div>
+      <div class="row">
+        <img
+          src="../../../assets/images/contact/mail.svg"
+          style="width: 24px"
+          alt="phone"
+        />
+        <p>nike_test@yahoo.com</p>
+      </div>
+      <div class="row">
+        <img
+          src="../../../assets/images/contact/clock.svg"
+          style="width: 24px"
+          alt="phone"
+        />
+        <p>10:00 - 18:00, Mon - Sat</p>
+      </div>
     </div>
-    <div class="row">
-      <img
-        src="../../../assets/images/contact/maps.svg"
-        style="width: 24px"
-        alt="phone"
-      />
-      <p>Wellington Road 54</p>
-    </div>
-    <div class="row">
-      <img
-        src="../../../assets/images/contact/mail.svg"
-        style="width: 24px"
-        alt="phone"
-      />
-      <p>nike_test@yahoo.com</p>
-    </div>
-    <div class="row">
-      <img
-        src="../../../assets/images/contact/clock.svg"
-        style="width: 24px"
-        alt="phone"
-      />
-      <p>10:00 - 18:00, Mon - Sat</p>
-    </div>
-  </div>
-  <div class="contact__map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45113.93125764486!2d15.459655456161645!3d47.02760117557253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e4ac6784ba025%3A0xf2f12a3139916bd!2sNike%20Factory%20Store!5e0!3m2!1sen!2sat!4v1649240562613!5m2!1sen!2sat"
-      height="400"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-</section>
 
-<!-- form/people -->
-<section class="form section-padding">
-  <div class="form__msg">
-    <h6>LEAVE A MESSAGE</h6>
-    <h4>We love to hear from you</h4>
-    <input type="text" placeholder="Your Name" />
-    <input type="text" placeholder="E-mail" />
-    <input type="text" placeholder="Subject" />
-    <textarea placeholder="Your message" cols="30" rows="10"></textarea>
-    <app-button-primary>Submit</app-button-primary>
-  </div>
+    <!-- two -->
+    <div class="two">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45113.93125764486!2d15.459655456161645!3d47.02760117557253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476e4ac6784ba025%3A0xf2f12a3139916bd!2sNike%20Factory%20Store!5e0!3m2!1sen!2sat!4v1649240562613!5m2!1sen!2sat"
+        height="400"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
 
-  <div class="form__people">
-    <div class="person">
-      <img src="../../../assets/images/testemonial/person1.jpg" alt="person1" />
-      <div class="person__data">
-        <strong>John Stone</strong>
-        <p>Senior Marketing Manager</p>
-        <p>Phone: +387 66 221 456</p>
-        <p>Email: contact@example.com</p>
+  <!-- second row -->
+  <section class="second">
+    <!-- three -->
+    <div class="three">
+      <h6>LEAVE A MESSAGE</h6>
+      <h4>We love to hear from you</h4>
+      <input type="text" placeholder="Your Name" />
+      <input type="text" placeholder="E-mail" />
+      <input type="text" placeholder="Subject" />
+      <textarea placeholder="Your message" cols="30" rows="10"></textarea>
+      <app-button-primary>Submit</app-button-primary>
+    </div>
+
+    <!-- four -->
+    <div class="four">
+      <div class="person">
+        <img
+          src="../../../assets/images/testemonial/person1.jpg"
+          alt="person1"
+        />
+        <div class="person__data">
+          <strong>John Stone</strong>
+          <p>Senior Marketing Manager</p>
+          <p>Phone: +387 66 221 456</p>
+          <p>Email: contact@example.com</p>
+        </div>
+      </div>
+      <div class="person">
+        <img
+          src="../../../assets/images/testemonial/person2.jpg"
+          alt="person2"
+        />
+        <div class="person__data">
+          <strong>Mario Giovinazzi</strong>
+          <p>Senior Marketing Manager</p>
+          <p>Phone: +387 66 221 456</p>
+          <p>Email: contact@example.com</p>
+        </div>
+      </div>
+      <div class="person">
+        <img
+          src="../../../assets/images/testemonial/person3.jpg"
+          alt="person3"
+        />
+        <div class="person__data">
+          <strong>David Williams</strong>
+          <p>Senior Marketing Manager</p>
+          <p>Phone: +387 66 221 456</p>
+          <p>Email: contact@example.com</p>
+        </div>
       </div>
     </div>
-    <div class="person">
-      <img src="../../../assets/images/testemonial/person2.jpg" alt="person2" />
-      <div class="person__data">
-        <strong>Mario Giovinazzi</strong>
-        <p>Senior Marketing Manager</p>
-        <p>Phone: +387 66 221 456</p>
-        <p>Email: contact@example.com</p>
-      </div>
-    </div>
-    <div class="person">
-      <img src="../../../assets/images/testemonial/person3.jpg" alt="person3" />
-      <div class="person__data">
-        <strong>David Williams</strong>
-        <p>Senior Marketing Manager</p>
-        <p>Phone: +387 66 221 456</p>
-        <p>Email: contact@example.com</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</div>

@@ -6,8 +6,8 @@
   <div class="dialog">
     <!-- action -->
     <ng-container *ngIf="dialogPurpose === 'action'">
-      <h6 class="question">Are you sure you want to delete?</h6>
-      <div class="div">
+      <h5>Are you sure you want to delete?</h5>
+      <div>
         <button class="delete" (click)="confirm($event)">Delete</button>
         <button class="cancel" (click)="cancel($event)">Cancel</button>
       </div>

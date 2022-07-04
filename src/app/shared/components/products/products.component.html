@@ -1,28 +1,32 @@
-<section class="products section-padding">
-  <h2 class="center">{{ chapter }}</h2>
-  <h6 class="center mar">{{ subchapter }}</h6>
+<section class="products">
+  <!-- one -->
+  <div class="one">
+    <h2>{{ chapter }}</h2>
+    <h6>{{ subchapter }}</h6>
 
-  <select
-    name="price"
-    id="price"
-    class="filter"
-    #value
-    (change)="selectedValue(value.value)"
-  >
-    <option value="0 200 price">All</option>
-    <option value="91 120 price">91-120 €</option>
-    <option value="0 90 price">0-90 €</option>
-    <option value="4 6 stars">5 stars</option>
-  </select>
+    <select
+      name="price"
+      id="price"
+      class="filter"
+      #value
+      (change)="selectedValue(value.value)"
+    >
+      <option value="0 200 price">All</option>
+      <option value="91 120 price">91-120 €</option>
+      <option value="0 90 price">0-90 €</option>
+      <option value="4 6 stars">5 stars</option>
+    </select>
+  </div>
 
-  <div class="products__con">
+  <!-- two -->
+  <div class="two">
     <div
-      class="products__box"
+      class="box"
       *ngFor="let product of products | products: limit"
       [routerLink]="['/single-product', product.eventId]"
     >
       <img src="{{ product.images[2] }}" alt="shoe" />
-      <h6>{{ product.marke }}</h6>
+      <span>{{ product.marke }}</span>
       <h5>{{ product.title }}</h5>
       <div class="stars">
         <img
@@ -32,13 +36,13 @@
         />
       </div>
       <div class="buy">
-        <h5 class="buy__price">{{ product.price }}€</h5>
-        <span class="circle">
+        <span>{{ product.price }}€</span>
+        <div class="cart">
           <img
             src="./../../../../assets/images/icons/cart-plus.svg"
             alt="cart"
           />
-        </span>
+        </div>
       </div>
     </div>
   </div>
